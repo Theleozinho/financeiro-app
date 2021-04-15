@@ -1,0 +1,142 @@
+/* Global  */
+
+:root {
+    --dark-blue: #363f5f;
+    --bg-color: #2D4a22;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.container {
+    width: min(90vw, 800px);
+    margin: auto;
+}
+
+
+/* Title  ===========================*/
+
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.9rem;
+    font-weight: normal;
+    color: var(--dark-blue);
+}
+
+
+/* Header  ===========================*/
+
+header {
+    background: var(--bg-color);
+    padding: 2rem 3rem 8rem;
+    text-align: center;
+}
+
+#logo {
+    color: #fff;
+    font-weight: 100;
+}
+
+
+/* Balance ========================= */
+
+#balance {
+    margin-top: -7rem;
+}
+
+#balance h2 {
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Carde ========================= */
+
+.card {
+    background: white;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.card p {
+    font-size: 2rem;
+    margin-top: 1rem;
+    line-height: 3rem;
+}
+
+.card.total {
+    background: #4ae212;
+    color: #fff;
+}
+
+
+/* Table ========================= */
+
+#data-table {
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color: #969cb3;
+}
+
+table thead th:first-child,
+table tbody td:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead th {
+    background: white;
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+table tbody td {
+    background: white;
+    padding: 1rem 2rem;
+}
+
+table tbody tr:hover {
+    opacity: 1;
+}
+
+table tbody tr {
+    opacity: 0.7;
+}
+
+td.description {
+    color: var(--dark-blue);
+}
+
+td.income {
+    color: #12a454;
+}
+
+td.expanse {
+    color: #e92929;
+}
+
+
+/* Footer ========================= */
+
+footer {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var(--dark-blue);
+    opacity: 0.6;
+}
