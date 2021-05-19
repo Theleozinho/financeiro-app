@@ -16,9 +16,6 @@
   }
 
 
-  //   Eu preciso somar as entradas
-  //   Depois eu preciso somar as saidas
-  //   Remover dasentradas o valor das saídas 
   const transactions = [{
           id: 1,
           description: 'luz',
@@ -28,7 +25,7 @@
       {
           id: 2,
           description: 'website',
-          amount: -500000,
+          amount: 500000,
           date: '23/01/2021',
       },
       {
@@ -39,6 +36,11 @@
       }
   ]
 
+
+
+  //   Eu preciso somar as entradas
+  //   Depois eu preciso somar as saidas
+  //   Remover dasentradas o valor das saídas 
 
   //   funcionalides do sistema
   const Transaction = {
@@ -58,16 +60,33 @@
   //   Substituir os dados do html com o dados do JS
 
   const DOM = {
-      innerHTMLTransaction() {
+      transactionsContainer: document.querySelector('#data-table tbody'),
+      addTransaction(transaction, index) {
+          console.log(transaction)
+          const tr = document.createElement('tr')
+          tr.innerHTML = DOM.innerHTMLTransaction(transaction);
+          DOM.transactionsContainer.appendChild(tr)
+      },
+      innerHTMLTransaction(transaction) {
+          const CSSlass = transaction.amount > 0 ? "income" : "expanse"
           const HTML = `
-         <tr>
-        <td class="description">Uber Eats</td>
-        <td class="expanse">R$ 500</td>
-        <td class="date">30/01/2021</td>
+        <td class="description">${transaction.description}</td>
+        <td class="${CSSlass}">${transaction.amount}</td>
+        <td class="date">${transaction.date}</td>
         <td class="date">
             <img src="assets/minus.svg" alt="remover transação">
         </td>
-        </tr>
         `
+          return HTML;
       }
   }
+
+  // Podemos usar o for ou o for each
+  //   for (let i = 0; i < 3; i++) {
+  //       DOM.addTransaction(transactions[i])
+  //   }
+
+  transactions.forEach(function(transaction) {
+      DOM.addTransaction(transaction)
+
+  });
